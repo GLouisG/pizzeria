@@ -13,3 +13,8 @@ function size(price, name){
   this.price = price;
   this.name = name;
 }
+var small = new size(500, "small");
+var medium = new size(200, "medium");
+var large = new size(100, "large");
+
+console.log(small);

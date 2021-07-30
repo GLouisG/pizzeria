@@ -10,6 +10,8 @@ h1{
 body{
   background: url(../images/shourav-sheikh-a66sGfOnnqQ-unsplash.jpg);
   background-size: cover;
+  align-content: center;
+  text-align: center;
 }
 .jumbotron{
   height: 150px;

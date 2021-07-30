@@ -5,4 +5,6 @@ function crust(price, name){
 }
 
 var stuffed = new crust(500, "stuffed");
-console.log(stuffed);
+var nogluten = new crust(200, "gluten free");
+var crispy = new crust(100, "crispy");
+console.log(nogluten);

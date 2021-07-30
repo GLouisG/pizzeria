@@ -17,12 +17,13 @@
   </div>
 
   <div class="order">
+    <form action="">
+
     <div class="row">
-    
     <div class="col-md-4">
-      <label for="toppings">Topping?</label>
+      <label for="toppings">Pick Topping:</label>
       <select onchange="" id="toppings">
-      <option disabled selected>Pick Toppings</option>
+      <option disabled selected>Pick Topping</option>
       <option value="pepperoni">Pepperoni</option>
       <option value="margherita">Margherita</option>
       <option value="chickroom">Chicken Mushroom</option>
@@ -39,7 +40,21 @@
         <option value="sicilian">Sicilian</option>
       </select>
     </div>
+
+    <div class="col-md-4">
+      <label for="crusts">Pick size:</label>
+      <select onchange="" id="sizes">
+        <option disabled selected>Pick Size</option>
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select>
+    </div>
   </div>
+  <input class="btn btn-danger" type="button" onclick="resetFunction()" value="Add To Cart">
+  <input class="btn btn-danger" type="button" onclick="resetFunction()" value="Add new pizza">
+  <input class="btn btn-danger" type="button" onclick="resetFunction()" value="Checkout">
+</form>
   </div>
 
 </div>  

@@ -1,8 +1,17 @@
 h1{
   text-align: center;
+  border-top: 0;
 }
 
 .logo{
   float: left;
   height: 100px;
+}
+body{
+  background: url(../images/shourav-sheikh-a66sGfOnnqQ-unsplash.jpg);
+  background-size: cover;
+}
+.jumbotron{
+  height: 150px;
+  background: none;
 }

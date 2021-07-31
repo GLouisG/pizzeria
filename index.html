@@ -25,10 +25,10 @@
       <label for="toppings">Pick Topping:</label>
       <select class="form-control" id="toppings" required>
       <option disabled selected>Pick Topping</option>
-      <option value="pepperoni">Pepperoni</option>
-      <option value="margherita">Margherita</option>
-      <option value="chickroom">Chicken Mushroom</option>
-      <option value="hawaiian">Hawaiian</option>
+      <option value="Pepperoni">Pepperoni</option>
+      <option value="Margherita">Margherita</option>
+      <option value="Chicken Mushroom">Chicken Mushroom</option>
+      <option value="Hawaiian">Hawaiian</option>
     </select> 
     </div>
 
@@ -52,6 +52,17 @@
       </select>
     </div>
   </div>
+
+  <div class="checkers">
+    <h4>Extra Toppings</h4>
+    <label for="mushCheck">Mushroom</label>
+    <input type="checkbox" id="mushCheck" value="Mushroom">  
+    <label for="salCheck">Salami</label>
+    <input type="checkbox" id="salCheck" value="Salami">
+    <label for="pepCheck">Pepperoni</label>
+    <input type="checkbox" id="pepCheck" value="Pepperoni">
+  </div>
+
   <br><br><br><br>
   <button type="submit" class="btn btn-danger">Add To Cart</button>
   <input class="btn btn-danger" type="button"  value="Checkout">
@@ -71,12 +82,16 @@
     </div>
 
   </div>
+  <h4>Extra toppings</h4>
+  <ul id="extras">
+    
+  </ul>
 </div>
 
 <div class="card" id="delivery">
   <h2>Do you plan to pick your order?</h2>
-  <input class="btn btn-danger" type="button" onclick="" value="Delivery">
-  <input class="btn btn-danger" type="button" onclick="" value="Pick 'n' Go">
+  <input class="btn btn-danger deliver" type="button" onclick="" value="Delivery">
+  <input class="btn btn-danger pick" type="button" onclick="" value="Pick 'n' Go">
 </div>
 
 

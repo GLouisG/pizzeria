@@ -46,6 +46,20 @@ $("form#new-pizza").submit(function(event){
     var total = parseInt(theCrust.price) + parseInt(theSize.price);
     console.log(total);
 
+    var mushroom = document.getElementById("mushCheck").checked;
+    var salami = document.getElementById("salCheck").checked;
+    var pepperoni = document.getElementById("pepCheck").checked;
+
+    if(mushroom===true){
+      $("ul#extras").append("<li>Mushroom</li>");
+    }
+    if(salami===true){
+      $("ul#extras").append("<li>Salami</li>");
+    }
+    if(pepperoni===true){
+      $("ul#extras").append("<li>Pepperoni</li>");
+    }
+
     $("#receipt").append( '<div class="row entry">'+
     '<div class="col-md-3"> <p>'  + inputTopping  + '</p></div>' +
     '<div class="col-md-3"><p>' + inputSize+ '</p></div>'  +
@@ -53,6 +67,10 @@ $("form#new-pizza").submit(function(event){
     '<div class="col-md-3"><p>' + total + '</p></div>' +
   '</div>');
 
+  $(".deliver").click(function(){
+    prompt("Where should we deliver to?");
+    alert("your order will be delivered to your location");
+  });
 
 });
 

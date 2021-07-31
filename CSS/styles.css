@@ -27,10 +27,12 @@ body{
 .selections{
   margin-left: 250px;
 }
-.entry{
-  
+#receipt{
+  background-color: maroon;
+  color: white;
 }
 .del-fee{
-  background-color: gray;
+  background-color: maroon;
+  color: white;
   display: none;
 }

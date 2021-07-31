@@ -70,6 +70,7 @@ $("form#new-pizza").submit(function(event){
   $(".deliver").click(function(){
     prompt("Where should we deliver to?");
     alert("your order will be delivered to your location");
+    $(".del-fee").toggle();
   });
 
 });

@@ -30,3 +30,7 @@ body{
 .entry{
   
 }
+.del-fee{
+  background-color: gray;
+  display: none;
+}

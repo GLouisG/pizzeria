@@ -44,8 +44,7 @@ $("form#new-pizza").submit(function(event){
     }
 
     var total = parseInt(theCrust.price) + parseInt(theSize.price);
-    console.log(theCrust.price);
-    console.log(theCrust.name);
+    console.log(total);
 });
 
 });

@@ -21,7 +21,7 @@
     <form id="new-pizza">
       <br>
     <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <label for="toppings">Pick Topping:</label>
       <select class="form-control" id="toppings" required>
       <option disabled selected>Pick Topping</option>
@@ -32,7 +32,7 @@
     </select> 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <label for="crusts">Pick your crust</label>
       <select class="form-control"  id="crusts" required>
         <option disabled selected>Pick crust</option>
@@ -42,7 +42,7 @@
       </select>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <label for="sizes">Pick size:</label>
       <select class="form-control" onchange="pizzaGen()" id="sizes" required>
         <option disabled selected>Pick Size</option>
@@ -62,7 +62,13 @@
   <h2>Cart/Checkout</h2>
   <p>You are required to pay the amounts below</p>
   <ul class="receipt">
-
+    <div class="row">
+      <div class="col-md-3"><p>Toppings</p></div>
+      <div class="col-md-3"><p>Size</p></div>
+      <div class="col-md-3"><p>Crust</p></div>
+      <div class="col-md-3"><p>Total/Ksh</p></div>
+    </div>
+    
   </ul>
 </div>
 

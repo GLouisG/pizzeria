@@ -45,6 +45,15 @@ $("form#new-pizza").submit(function(event){
 
     var total = parseInt(theCrust.price) + parseInt(theSize.price);
     console.log(total);
+
+    $("#receipt").append( '<div class="row entry">'+
+    '<div class="col-md-3"> <p>'  + inputTopping  + '</p></div>' +
+    '<div class="col-md-3"><p>' + inputSize+ '</p></div>'  +
+    '<div class="col-md-3"><p>' + inputCrust + '</p></div>'  +
+    '<div class="col-md-3"><p>' + total + '</p></div>' +
+  '</div>');
+
+
 });
 
 });

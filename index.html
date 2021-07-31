@@ -6,6 +6,7 @@
   <title>Pazzo's Pizzeria</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="./CSS/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script src="./script.js"></script>
 </head>
 <body>
@@ -17,12 +18,12 @@
   </div>
 
   <div class="order">
-    <form action="">
+    <form id="new-pizza">
       <br>
     <div class="row">
     <div class="col-md-4">
       <label for="toppings">Pick Topping:</label>
-      <select onchange="" id="toppings">
+      <select class="form-control" id="toppings" required>
       <option disabled selected>Pick Topping</option>
       <option value="pepperoni">Pepperoni</option>
       <option value="margherita">Margherita</option>
@@ -33,7 +34,7 @@
 
     <div class="col-md-4">
       <label for="crusts">Pick your crust</label>
-      <select onchange="" id="crusts">
+      <select class="form-control"  id="crusts" required>
         <option disabled selected>Pick crust</option>
         <option value="gluten">Gluten Free</option>
         <option value="crispy">Crispy</option>
@@ -42,8 +43,8 @@
     </div>
 
     <div class="col-md-4">
-      <label for="crusts">Pick size:</label>
-      <select onchange="" id="sizes">
+      <label for="sizes">Pick size:</label>
+      <select class="form-control" onchange="pizzaGen()" id="sizes" required>
         <option disabled selected>Pick Size</option>
         <option value="small">Small</option>
         <option value="medium">Medium</option>
@@ -52,8 +53,8 @@
     </div>
   </div>
   <br><br><br><br>
-  <input class="btn btn-danger" type="button" onclick="" value="Add To Cart">
-  <input class="btn btn-danger" type="button" onclick="" value="Checkout">
+  <button type="submit" class="btn btn-danger">Add To Cart</button>
+  <input class="btn btn-danger" type="button"  value="Checkout">
 </form>
   </div>
 

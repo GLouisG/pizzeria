@@ -1,4 +1,4 @@
-function pizzaGen(){
+
 function crust(price, name){
   this.price = price;
   this.name = name;
@@ -17,15 +17,17 @@ var small = new size(500, "small");
 var mid = new size(200, "medium");
 var large = new size(100, "large");
 
+
+function pizzaGen(){
 $(document).ready(function(){
-
+  
 $("form#new-pizza").submit(function(event){
+  
   event.preventDefault();
-
    var inputTopping = document.getElementById("toppings").value;
     var inputCrust = document.getElementById("crusts").value;
     var inputSize = document.getElementById("sizes").value;
-    console.log(inputCrust);
+    
 
     if(inputSize==="large"){
       var theSize = large;
@@ -35,16 +37,16 @@ $("form#new-pizza").submit(function(event){
       var theSize = small;
     }
     
-    if(inputCrust ==="gluten"){
+    if(inputCrust ==="GlutenFree"){
       var theCrust = gluten;
     }else if(inputCrust ==="stuffed"){
       var theCrust = stuffed;
     }else{
       var theCrust = crisp;
     }
-
+    
     var total = parseInt(theCrust.price) + parseInt(theSize.price);
-    console.log(total);
+    
 
     var mushroom = document.getElementById("mushCheck").checked;
     var salami = document.getElementById("salCheck").checked;
@@ -72,8 +74,19 @@ $("form#new-pizza").submit(function(event){
     alert("your order will be delivered to your location");
     $(".del-fee").toggle();
   });
+  
+  $(".pick").click(function(){
+    alert("Hope to see you soon.");
+  });
+
 
 });
 
-});
+
+})
+
 }
+
+
+
+

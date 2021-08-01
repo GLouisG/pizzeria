@@ -8,4 +8,4 @@
 - The program prompts for location when the deliver button is clicked.  
     
 ## LINKS
-- The page is live on github pages at 	.
+- The page is live on github pages at glouisg.github.io/delani/.

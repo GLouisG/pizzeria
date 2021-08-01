@@ -20,7 +20,7 @@ var large = new size(100, "large");
 
 function pizzaGen(){
 $(document).ready(function(){
-  
+  let total;
 $("form#new-pizza").submit(function(event){
   
   event.preventDefault();
@@ -45,7 +45,7 @@ $("form#new-pizza").submit(function(event){
       var theCrust = crisp;
     }
     
-    var total = parseInt(theCrust.price) + parseInt(theSize.price);
+    total = parseInt(theCrust.price) + parseInt(theSize.price);
     
 
     var mushroom = document.getElementById("mushCheck").checked;
@@ -79,11 +79,12 @@ $("form#new-pizza").submit(function(event){
     alert("Hope to see you soon.");
   });
 
+return total
+})
+
+console.log(total);
 
 });
-
-
-})
 
 }
 

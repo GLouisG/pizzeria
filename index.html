@@ -1,103 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pazzo's Pizzeria</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="./CSS/styles.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-  <script src="./script.js"></script>
-</head>
-<body>
-<div class="container-fluid">
-
-  <div class="jumbotron">
-    <img class="logo" src="./images/pizzalog.png">
-    <h1>Pazzo's Pizzeria</h1>
-  </div>
-
-  <div class="order">
-    <form id="new-pizza">
-      <br>
-    <div class="row selections">
-    <div class="col-md-3">
-      <label for="toppings">Pick Topping:</label>
-      <select class="form-control" id="toppings" required>
-      <option disabled selected>Pick Topping</option>
-      <option value="Pepperoni">Pepperoni</option>
-      <option value="Margherita">Margherita</option>
-      <option value="Chicken Mushroom">Chicken Mushroom</option>
-      <option value="Hawaiian">Hawaiian</option>
-    </select> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pazzo's Pizzeria</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <img class="logo" src="./images/pizzalog.png">
+        <h1>Pazzo's Pizzeria</h1>
+      </div>
+      <div class="order">
+        <form id="new-pizza">
+          <br>
+          <div class="row selections">
+            <div class="col-md-3">
+              <label for="toppings">Pick Topping:</label>
+              <select class="form-control" id="toppings" required>
+                <option disabled selected>Pick Topping</option>
+                <option value="Pepperoni">Pepperoni</option>
+                <option value="Margherita">Margherita</option>
+                <option value="Chicken Mushroom">Chicken Mushroom</option>
+                <option value="Hawaiian">Hawaiian</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="crusts">Pick your crust</label>
+              <select class="form-control"  id="crusts" required>
+                <option disabled selected>Pick crust</option>
+                <option value="GlutenFree">Gluten Free</option>
+                <option value="crispy">Crispy</option>
+                <option value="stuffed">Stuffed</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="sizes">Pick size:</label>
+              <select class="form-control" onchange="pizzaGen()" id="sizes" required>
+                <option disabled selected>Pick Size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
+          </div>
+          <div class="checkers">
+            <h4>Extra Toppings</h4>
+            <label for="mushCheck">Mushroom</label>
+            <input type="checkbox" id="mushCheck" value="Mushroom">  
+            <label for="salCheck">Salami</label>
+            <input type="checkbox" id="salCheck" value="Salami">
+            <label for="pepCheck">Pepperoni</label>
+            <input type="checkbox" id="pepCheck" value="Pepperoni">
+          </div>
+          <br><br><br><br>
+          <button type="submit" class="btn btn-danger ">Add To Cart</button>
+        </form>
+      </div>
+      <div class="card" id="cart">
+        <h2>Cart/Checkout</h2>
+        <p>You are required to pay the amounts below</p>
+        <div id="receipt">
+          <div class="row">
+            <div class="col-md-3">
+              <p>Toppings</p>
+            </div>
+            <div class="col-md-3">
+              <p>Size</p>
+            </div>
+            <div class="col-md-3">
+              <p>Crust</p>
+            </div>
+            <div class="col-md-3">
+              <p>Total/Ksh</p>
+            </div>
+          </div>
+        </div>
+        <h4>Extra toppings</h4>
+        <ul id="extras">
+        </ul>
+        <h4 class="del-fee">Delivery Fee: 200/=</h4>
+      </div>
+      <div class="card" id="delivery">
+        <h2>Do you plan to pick your order?</h2>
+        <input class="btn btn-danger deliver" type="button" onclick="" value="Delivery">
+        <input class="btn btn-danger pick" type="button" onclick="" value="Pick 'n' Go">
+      </div>
+      <p id="test"></p>
     </div>
-
-    <div class="col-md-3">
-      <label for="crusts">Pick your crust</label>
-      <select class="form-control"  id="crusts" required>
-        <option disabled selected>Pick crust</option>
-        <option value="GlutenFree">Gluten Free</option>
-        <option value="crispy">Crispy</option>
-        <option value="stuffed">Stuffed</option>
-      </select>
-    </div>
-
-    <div class="col-md-3">
-      <label for="sizes">Pick size:</label>
-      <select class="form-control" onchange="pizzaGen()" id="sizes" required>
-        <option disabled selected>Pick Size</option>
-        <option value="small">Small</option>
-        <option value="medium">Medium</option>
-        <option value="large">Large</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="checkers">
-    <h4>Extra Toppings</h4>
-    <label for="mushCheck">Mushroom</label>
-    <input type="checkbox" id="mushCheck" value="Mushroom">  
-    <label for="salCheck">Salami</label>
-    <input type="checkbox" id="salCheck" value="Salami">
-    <label for="pepCheck">Pepperoni</label>
-    <input type="checkbox" id="pepCheck" value="Pepperoni">
-  </div>
-
-  <br><br><br><br>
-  <button type="submit" class="btn btn-danger">Add To Cart</button>
-  <input class="btn btn-danger" id="checkout" type="button"  value="Checkout">
-</form>
-  </div>
-
-<div class="card" id="cart">
-  <h2>Cart/Checkout</h2>
-  <p>You are required to pay the amounts below</p>
-
-  <div id="receipt">
-    <div class="row">
-      <div class="col-md-3"><p>Toppings</p></div>
-      <div class="col-md-3"><p>Size</p></div>
-      <div class="col-md-3"><p>Crust</p></div>
-      <div class="col-md-3"><p>Total/Ksh</p></div>
-    </div>
-
-  </div>
-  <h4>Extra toppings</h4>
-  <ul id="extras">
-  </ul>
-
-    <h4 class="del-fee">Delivery Fee: 200/=</h4>
-  
-</div>
-
-<div class="card" id="delivery">
-  <h2>Do you plan to pick your order?</h2>
-  <input class="btn btn-danger deliver" type="button" onclick="" value="Delivery">
-  <input class="btn btn-danger pick" type="button" onclick="" value="Pick 'n' Go">
-</div>
-
-<p id="test"></p>
-
-</div>  
-</body>
+  </body>
 </html>
